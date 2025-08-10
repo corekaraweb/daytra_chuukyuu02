@@ -598,6 +598,7 @@ body {
   background-image: url(../img/sp/contact_bg.jpg);
   background-size: cover;
   background-position: center;
+  margin-top: 96px;
 }
 @media screen and (min-width: 768px) {
   .contact {
@@ -610,9 +611,23 @@ body {
   padding: 56px 15px;
 }
 
+.contact__heading {
+  color: #3ea1d1;
+}
+
 .contact__content {
   max-width: 510px;
   margin-inline: auto;
+}
+
+.contact__content-caution {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.contact__content-caution span {
+  color: #e772be;
 }
 
 .contact__form-item {
@@ -648,11 +663,12 @@ body {
   font-size: 14px;
   background-color: #3ea1d1;
   color: #fff;
-  padding: 4px 30px 4px 16px;
+  padding: 5px 30px 3px 16px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: 40px;
+  font-weight: 600;
   position: relative;
 }
 @media screen and (min-width: 768px) {
@@ -660,8 +676,6 @@ body {
     padding: 5px 4px;
     width: 172px;
     font-size: 18px;
-    font-weight: 600;
-    height: 40px;
     line-height: 40px;
     padding: 0;
     text-align: center;
