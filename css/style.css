@@ -1,3 +1,13 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+}
+
 body {
   font-family: "Noto Serif JP", serif;
   color: #333333;
@@ -23,6 +33,11 @@ body {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  background: #fff;
   height: 60px;
 }
 @media screen and (min-width: 768px) {
@@ -47,6 +62,13 @@ body {
 .header__logo a img {
   width: 120px;
   display: block;
+}
+@media screen and (min-width: 768px) {
+  .header__logo a:hover {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 0.6;
+  }
 }
 
 .header__nav {
@@ -117,6 +139,11 @@ body {
   .header__link {
     color: #333333;
     font-size: 16px;
+    -webkit-transform: color 0.3s;
+            transform: color 0.3s;
+  }
+  .header__link:hover {
+    color: #3ea1d1;
   }
 }
 
@@ -411,6 +438,23 @@ body {
   width: 100%;
   display: block;
 }
+@media screen and (min-width: 768px) {
+  .product__image img {
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+  }
+  .product__image img:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+@media screen and (min-width: 768px) {
+  .product__image {
+    overflow: hidden;
+  }
+}
 
 .product__text {
   margin-top: 20px;
@@ -463,11 +507,24 @@ body {
     display: -ms-flexbox;
     display: flex;
     gap: 40px;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .news__item:hover {
+    opacity: 0.7;
+  }
+  .news__item:hover img {
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
+.news__image {
+  overflow: hidden;
+}
 @media screen and (min-width: 768px) {
   .news__image {
     -ms-flex-negative: 0;
@@ -723,6 +780,12 @@ body {
     width: 320px;
   }
 }
+.contact__form-item input[type=text]:focus,
+.contact__form-item input[type=email]:focus {
+  outline: #3ea1d1 auto 1px;
+  -webkit-box-shadow: 5px 6px 16px 0 #3ea1d1;
+          box-shadow: 5px 6px 16px 0 #3ea1d1;
+}
 
 .contact__form-radio-block {
   display: -webkit-box;
@@ -769,6 +832,9 @@ body {
 .contact__form-radio:checked + .contact__form-radio-label {
   background-color: #3ea1d1;
   color: #fff;
+  outline: #3ea1d1 auto 1px;
+  -webkit-box-shadow: 5px 6px 16px 0 #3ea1d1;
+          box-shadow: 5px 6px 16px 0 #3ea1d1;
 }
 
 .contact__form-textarea {
@@ -782,6 +848,11 @@ body {
   .contact__form-textarea {
     width: 320px;
   }
+}
+.contact__form-textarea:focus {
+  outline: #3ea1d1 auto 1px;
+  -webkit-box-shadow: 5px 6px 16px 0 #3ea1d1;
+          box-shadow: 5px 6px 16px 0 #3ea1d1;
 }
 
 .contact__form-privacy {
@@ -806,6 +877,11 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+.contact__form-privacy-checkbox:focus {
+  outline: #3ea1d1 auto 1px;
+  -webkit-box-shadow: 5px 6px 16px 0 #3ea1d1;
+          box-shadow: 5px 6px 16px 0 #3ea1d1;
 }
 
 .contact__form-privacy-checkbox:checked:before {
@@ -840,6 +916,15 @@ body {
 .footer__logo {
   margin-bottom: 24px;
 }
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .footer__logo:hover {
+    opacity: 0.6;
+  }
+}
 .footer__logo img {
   width: 120px;
   height: 22px;
@@ -867,6 +952,13 @@ body {
         -ms-flex-direction: row;
             flex-direction: row;
     gap: 24px;
+  }
+  .footer__link a {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .footer__link a:hover {
+    opacity: 0.6;
   }
 }
 

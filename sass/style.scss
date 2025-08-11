@@ -32,7 +32,13 @@ $breakpoints: (
   font-weight: 300;
   letter-spacing: 0.02px;
 }
-
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $header-height-sp;
+  @include mq(md) {
+    scroll-padding-top: $header-height-pc;
+  }
+}
 body {
   font-family: $font-base;
   color: $text-color;
@@ -53,6 +59,11 @@ body {
   }
 }
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  background: #fff;
   height: $header-height-sp;
   @include mq(md) {
     height: $header-height-pc;
@@ -71,6 +82,12 @@ body {
     img {
       width: 120px;
       display: block;
+    }
+    &:hover {
+      @include mq(md) {
+        transition: opacity 0.3s;
+        opacity: 0.6;
+      }
     }
   }
 }
@@ -120,6 +137,10 @@ body {
   @include mq(md) {
     color: $text-color;
     font-size: 16px;
+    transform: color 0.3s;
+    &:hover {
+      color: $main-color;
+    }
   }
 }
 .drwaer-icon {
@@ -364,6 +385,15 @@ body {
   img {
     width: 100%;
     display: block;
+    @include mq(md) {
+      transition: transform 0.3s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  @include mq(md) {
+    overflow: hidden;
   }
 }
 .product__text {
@@ -399,10 +429,18 @@ body {
   @include mq(md) {
     display: flex;
     gap: 40px;
-    justify-content: space-around;
+    justify-content: flex-start;
+    &:hover {
+      opacity: 0.7;
+      img {
+        transition: 0.3s;
+        transform: scale(1.1);
+      }
+    }
   }
 }
 .news__image {
+  overflow: hidden;
   @include mq(md) {
     flex-shrink: 0;
     width: 260px;
@@ -580,6 +618,10 @@ body {
   @include mq(md) {
     width: 320px;
   }
+  &:focus {
+    outline: $main-color auto 1px;
+    box-shadow: 5px 6px 16px 0 $main-color;
+  }
 }
 .contact__form-radio-block {
   display: flex;
@@ -615,6 +657,8 @@ body {
 .contact__form-radio:checked + .contact__form-radio-label {
   background-color: $main-color;
   color: #fff;
+  outline: $main-color auto 1px;
+  box-shadow: 5px 6px 16px 0 $main-color;
 }
 .contact__form-textarea {
   width: 100%;
@@ -623,6 +667,10 @@ body {
   box-shadow: 5px 6px 16px 0 rgba(96, 96, 96, 0.16);
   @include mq(md) {
     width: 320px;
+  }
+  &:focus {
+    outline: $main-color auto 1px;
+    box-shadow: 5px 6px 16px 0 $main-color;
   }
 }
 .contact__form-privacy {
@@ -645,6 +693,10 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  &:focus {
+    outline: $main-color auto 1px;
+    box-shadow: 5px 6px 16px 0 $main-color;
+  }
 }
 .contact__form-privacy-checkbox:checked:before {
   position: absolute;
@@ -676,6 +728,12 @@ body {
 }
 .footer__logo {
   margin-bottom: 24px;
+  @include mq(md) {
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
   img {
     width: 120px;
     height: 22px;
@@ -691,6 +749,12 @@ body {
   @include mq(md) {
     flex-direction: row;
     gap: 24px;
+    a {
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
   }
 }
 .footer__icon {
